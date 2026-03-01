@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c0c8hnttefntx"]
+
+[ext_resource type="Texture2D" uid="uid://b1i5w43pkvak0" path="res://assets.1/4 Animated objects/Gas_sycle.png" id="1_dg5d3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a44u2"]
+atlas = ExtResource("1_dg5d3")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kddwg"]
+atlas = ExtResource("1_dg5d3")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y35ty"]
+atlas = ExtResource("1_dg5d3")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwu8c"]
+atlas = ExtResource("1_dg5d3")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sicn"]
+atlas = ExtResource("1_dg5d3")
+region = Rect2(288, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix6le"]
+atlas = ExtResource("1_dg5d3")
+region = Rect2(360, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20xcu"]
+atlas = ExtResource("1_dg5d3")
+region = Rect2(432, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8fc7"]
+atlas = ExtResource("1_dg5d3")
+region = Rect2(504, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4js5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a44u2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kddwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y35ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwu8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sicn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix6le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20xcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8fc7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3g2yu"]
+radius = 15.811388
+
+[node name="flame" type="CharacterBody2D" unique_id=695257364]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1056112390]
+position = Vector2(-1, -35)
+sprite_frames = SubResource("SpriteFrames_4js5v")
+frame_progress = 0.29116365
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=1559841678]
+position = Vector2(1, 20)
+shape = SubResource("CircleShape2D_3g2yu")

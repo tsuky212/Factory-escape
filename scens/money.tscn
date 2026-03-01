@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://pwc3f2daij4h"]
+
+[ext_resource type="Script" uid="uid://bm26v6ivcibs0" path="res://scripts/money.gd" id="1_lfvi2"]
+[ext_resource type="Texture2D" uid="uid://b2nycnf3hrioe" path="res://assets.1/4 Animated objects/Money.png" id="1_oapnx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfvi2"]
+atlas = ExtResource("1_oapnx")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on23g"]
+atlas = ExtResource("1_oapnx")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js7xe"]
+atlas = ExtResource("1_oapnx")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaq0w"]
+atlas = ExtResource("1_oapnx")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhmlu"]
+atlas = ExtResource("1_oapnx")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1wfg"]
+atlas = ExtResource("1_oapnx")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wmxf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfvi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on23g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js7xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaq0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhmlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1wfg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sw2n"]
+size = Vector2(6, 7)
+
+[node name="money" type="Area2D" unique_id=688568996]
+collision_mask = 2
+script = ExtResource("1_lfvi2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=736037027]
+sprite_frames = SubResource("SpriteFrames_0wmxf")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7516207
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=799751635]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_0sw2n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
